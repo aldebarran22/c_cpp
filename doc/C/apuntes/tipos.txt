@@ -1,0 +1,36 @@
+unsigned char c;
+
+typedef unsigned char TByte;
+
+TByte c;
+
+typedef struct {
+	int x;
+	int y;
+} TPunto2D;
+
+TPunto2D p;
+
+////////////////////////////////////////////////
+
+Estructura autoreferenciada
+typedef struct L {
+
+	int dato;
+	struct L *sig;
+	
+} TLista;
+
+TLista L;
+
+
+
+
+//////////////////////////////////////////////
+
+struct info_libro *L;
+
+L->titulo
+(*L).titulo
+
+L->fecha.yy

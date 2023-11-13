@@ -1,0 +1,9 @@
+printf  -> stdout
+fprintf -> f ile
+sprintf -> s tring
+
+gets()
+fgets() -> stdin
+
+puts()
+fputs()

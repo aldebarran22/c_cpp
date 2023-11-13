@@ -1,0 +1,17 @@
+Estructura Fecha:
+
+typedef struct {
+	int d;
+	int m;
+	int y;
+} TFecha;
+
+Estructuras autoreferenciadas:
+
+typedef struct L {
+	int dato;	
+	struct L *sig;
+} TLista;
+
+
+

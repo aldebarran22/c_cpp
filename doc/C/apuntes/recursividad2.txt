@@ -1,0 +1,6 @@
+
+s = "hola"
+
+1) reves("hola")     2) reves("ola")      3) reves("la")     4) reves("a")   5) reves("")
+   reves("ola")		  reves("la")		reves("a")       reves("")	CORTA 
+   "h"			  "o"			"l"		 "a"

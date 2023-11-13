@@ -1,0 +1,4 @@
+FUNCION				PUNTERO A FUNCION
+int *funcion(int,char *)	int *(*pFun)(int, char *)  
+int asc(int, int)
+int desc(int, int)		int (*crit)(int, int)	

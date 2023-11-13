@@ -1,0 +1,18 @@
+Conceptos en los hilos:
+
+- Condición de Carrera: Cuando dos o más hilos acceden  a un recurso
+(una variable --> sección crítica) sin ningún tipo de sincronización
+y se corrompe la memoria.
+
+- Interbloqueo: Varios están esperando por un recurso y el hilo que
+lo tiene ocupado no lo libera.
+
+- Región crítica: (variable / recurso ...) algo que comparten 2 o más hilos
+ 
+
+- Mutex (semáforos binarios: 0 / 1) -> realizar tareas "exclusión mutua"
+- Semáforos
+
+Los mecanismos de sincronización crearlos ANTES de poner los hilos en marcha.
+Que todos los hilos vean los mismos mecanismos de sincronización.
+ 

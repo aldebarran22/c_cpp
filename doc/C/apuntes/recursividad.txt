@@ -1,0 +1,20 @@
+hola que tal
+ola que tal
+la que tal
+a que tal
+ que tal
+que tal
+ue tal
+e tal
+ tal
+tal -> 
+al -> 1+1=2
+l -> 1+0 = 1
+\0 -> 0	
+
+
+hola-> printf("h") 4 
+ola -> printf("o") 3 
+la  -> printf("l") 2
+a   -> printf("a") 1 
+\0
