@@ -1,10 +1,17 @@
 #include <stdio.h>
 
+#define TRUE 1
+#define FALSE 0
+
 int main(){
     int a = 0;
     char letra;
+    int c = 10, d;
 
-    if (a){ // if (a != 0)
+    d = ++c; // Prefijo, incrementa y asigna
+    d = c++; // Postfijo, asigna, incrementa.
+
+    if (++a){ // if (a != 0)
         puts("es true");
     } else {
         puts("es false");
