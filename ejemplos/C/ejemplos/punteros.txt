@@ -1,0 +1,25 @@
+
+// Con estas definiciones:
+int a = 2;
+int *a2;
+int *b;
+int **c;
+
+
+// correcto o no:
+b = a; // b = &a; // 
+
+b = *c;
+
+a2 = &a;
+
+c = &a2;
+
+
+// Que prototipos tendríamos para estas llamadas a funciones:
+
+b = funcion1(a, a2); -> prototipo: int *funcion1(int, int *);
+
+funcion2(c); -> prototipo: void funcion2(int **);
+
+a = funcion3(a2, b); -> int funcion3(int *, int *);

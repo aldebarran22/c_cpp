@@ -1,0 +1,19 @@
+; dlltool --base-file C:\Users\Anton\AppData\Local\Temp\cca16308.base --output-exp mi_dll.exp --dllname mi_dll.dll --output-def libmi_dll.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup --def C:\Users\Anton\AppData\Local\Temp\cca16308.def --output-lib libmi_dll.a
+EXPORTS
+;	DllClass::HelloWorld()
+	_ZN8DllClass10HelloWorldEv @ 1
+;	DllClass::DllClass()
+	_ZN8DllClassC1Ev @ 2
+;	DllClass::DllClass()
+	_ZN8DllClassC2Ev @ 3
+;	DllClass::~DllClass()
+	_ZN8DllClassD0Ev @ 4
+;	DllClass::~DllClass()
+	_ZN8DllClassD1Ev @ 5
+;	DllClass::~DllClass()
+	_ZN8DllClassD2Ev @ 6
+;	typeinfo for DllClass
+	_ZTI8DllClass @ 7 DATA
+;	vtable for DllClass
+	_ZTV8DllClass @ 8 DATA
+	funcion1 @ 9

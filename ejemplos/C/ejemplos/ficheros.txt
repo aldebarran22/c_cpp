@@ -1,0 +1,13 @@
+
+// Fichero origen y fichero destino.
+
+
+// Abrir fichero origen de lectura. "rt"
+// Abrir fichero destino de escritura. "wt"
+
+// Comprobar si los ficheros no son NULL.
+
+// Leer carácter a carácter del fichero origen y grabar 
+// en el fichero destino.
+
+// Cerrar ficheros (origen y destino).
