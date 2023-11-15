@@ -3,6 +3,25 @@
 
 #define N 10
 
+void modificar(int *array, int n, int val){
+    // Multiplica cada posicion del array por val:
+    int i;
+
+    for (i = 0 ; i < N ; i++){
+        array[i] *= val;
+    }
+}
+
+void imprimir(int array[], int n){ // void imprimir(int *array){
+    int i;
+    //int n = sizeof(array) / sizeof(int); OJO no recibe los 10 int. Recibe la dir. del inicio del array.
+    printf("\nTenemos %d elementos en array\n", n);
+    for (i = 0 ; i < N ; i++){
+        printf("%d ", array[i]);
+    }
+    puts("");
+}
+
 int main(){
     int numeros[N];
     int numeros2[]={1,2,3,4,5};
@@ -28,6 +47,15 @@ int main(){
     for (i = 0 ; i < N ; i++){
         printf("%d ", p[i]);
     }
+    puts("");
+
+    // Calcular el numero de elementos de un array:
+    printf("\nTam. del array: %ld bytes", sizeof(numeros3));
+    int n = sizeof(numeros3) / sizeof(int);
+    printf("\nTenemos %d elementos en numeros3", n);
+    imprimir(numeros3, n);
+    modificar(numeros3, n, 10);
+    imprimir(numeros3, n);
     puts("");
 
     return 0;
