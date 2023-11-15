@@ -28,6 +28,7 @@ int main(){
     printf("Dir en main: %p\n", &valor);
     pasoPorPtr(&valor); // Enviar la direccion de memoria de la variable "valor"
     printf("numero: %d\n", valor);
+    printf("La dir de pasoPorPtr: %p", pasoPorPtr);
 
 
     //imprimir(10);

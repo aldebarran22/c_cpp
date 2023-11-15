@@ -30,25 +30,49 @@ void pruebaArrChars(){
 }
 
 void cadenasIO(){
-    char s[10];
+    char s[100];
 
     puts("Dame texto");
-    fgets(s, 10, stdin);
+    fgets(s, 100, stdin);
     puts(s);
     int n = strlen(s);
     if (s[n-1]=='\n')
         s[n-1]='\0';
 
-    if (strcmp(s, "hola")==0){
+    //if (strnicmp(s, "hola", 4)==0){
+    if (!strncasecmp(s, "hola", 4)){
         puts("iguales");
     } else {
         puts("distintas");
     }
-    printf("\nNumero de chars de s: %ld", strlen(s));
+    strcat(s, " mas caracteres");
+    puts(s);
+    printf("\nNumero de chars de s: %ld\n", strlen(s));
+}
+
+void busquedas(){
+    char cad[100] = {"hola que tal"};
+    char *ptr;
+
+    ptr = strchr(cad, 'a');
+    if (ptr != NULL){
+        printf("\nLa letra esta en la dir: %p - %c\n", ptr, *ptr);
+        printf("Direccion de inicio: %p\n", cad);
+        printf("\nPosicion: %ld\n", ptr - cad);
+        puts(ptr);
+
+        // Buscar la otra 'a':
+        ptr = strchr(ptr+1, 'a');
+        if (ptr!=NULL){
+            printf("\nPosicion segunda 'a': %ld\n", ptr - cad);
+        }
+    }
+    puts("");
 }
 
 int main(){
     //pruebaArrChars();
-    cadenasIO();
+    //cadenasIO();
+    busquedas();
     return 0;
 }

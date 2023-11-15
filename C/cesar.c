@@ -40,9 +40,15 @@ void decodificar(const int *numeros, const char *alfabeto, char *mensaje_enc, in
 }
 
 int main(){
-    char mensaje[TAM_MEN], mensaje_enc[TAM_MEN];
+    char mensaje[TAM_MEN] = {"mi tno es 567889922"}, mensaje_enc[TAM_MEN];
+    int numeros[TAM_MEN];
     char alfabeto[ALF * 2 + 10 + 1 + 1]; // dos alfabetos + 10 digitos + 1 espacio + 1 \0
 
+    int n = strlen(mensaje);
+    
     cargarAlfabeto(alfabeto);
     puts(alfabeto);
+
+    codificar(mensaje, alfabeto, numeros, n);
+    imprimir(numeros, n);
 }

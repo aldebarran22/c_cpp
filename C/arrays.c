@@ -22,12 +22,22 @@ void imprimir(int array[], int n){ // void imprimir(int *array){
     puts("");
 }
 
+int *crearArray(){
+    // ERROR, NO DEVOLVER DIRECCIONES DE VARIABLES LOCALES:
+    int numeros[] = {1,2,3,4,5,6};
+
+    return numeros;
+}
+
 int main(){
     int numeros[N];
     int numeros2[]={1,2,3,4,5};
     int numeros3[N] = {0};
     int i;
     int *p;
+
+    int *ptr = crearArray();
+    imprimir(ptr, 6);
 
     numeros3[0] = 999;
     numeros3[2] = 5;
