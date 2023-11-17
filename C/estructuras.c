@@ -4,9 +4,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define N_MAX 10
+
 struct TFecha
-{
-    /* data */
+{   
     int dd;
     int mm;
     int yy;
@@ -18,6 +19,12 @@ typedef struct {
     int m;
     int s;
 } THora; // El nombre de un tipo nuevo
+
+typedef struct {
+    char usuario[N_MAX];
+    struct TFecha fecha;
+    THora hora;
+} TUser;
 
 void imprimirFecha(struct TFecha f){
     printf("%02d/%02d/%d", f.dd, f.mm, f.yy);
@@ -64,6 +71,16 @@ struct TFecha fechaRand(){
     return f;
 }
 
+void usuarioRand(char *user){
+    // Generar el nombre del usuario a partir de 5 letras:
+    int i;
+
+    for (i = 0 ; i < 5 ; i++){
+        user[i] = (char) (65 + rand() % 26);
+    }
+    user[i] = '\0';
+}
+
 THora horaRand(){
     THora hora;
 
@@ -90,6 +107,10 @@ int main(){
     THora horas[] = { {1,2,33}, {6,7,8}, {12,4,56}, {8,45,11} };
     int nHoras = sizeof(horas) / sizeof(THora);
     int i;
+    TUser user = {"", {12,4,2020}, {12,45,9}};
+
+    usuarioRand(user.usuario);
+    puts(user.usuario);
 
     srand(time(NULL));
     imprimirHoras(horas, nHoras);
