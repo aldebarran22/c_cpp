@@ -44,6 +44,14 @@ void leerHora(THora *hora){
     hora->s = atoi(aux);
 }
 
+struct TFecha leerFecha(){
+    struct  TFecha f;
+   
+    printf("Introduce: d m y: ");
+    scanf("%d %d %d", &f.dd, &f.mm, &f.yy);
+    return f;
+}
+
 
 struct TFecha fechaRand(){
     int dias[] = {31,28,31,30,31,30,31,31,30,31,30,31};
@@ -66,13 +74,27 @@ THora horaRand(){
     return hora;
 }
 
+void imprimirHoras(THora *horas, int n){
+    int i;
+
+    for (i = 0 ; i < n ; i++){
+        imprimirHora(horas[i]);
+        printf("\n direccion: %p \t segundos: %d\n", &horas[i], horas[i].s);
+
+    }
+}
+
 int main(){
     THora ahora = {16, 42, 56};
     struct TFecha hoy = {5, 1, 2023};
+    THora horas[] = { {1,2,33}, {6,7,8}, {12,4,56}, {8,45,11} };
+    int nHoras = sizeof(horas) / sizeof(THora);
     int i;
 
     srand(time(NULL));
+    imprimirHoras(horas, nHoras);
 
+    /*
     imprimirFecha(hoy);
     puts("");
 
@@ -88,6 +110,10 @@ int main(){
     // Leer una hora:
     leerHora(&ahora);
     imprimirHora(ahora);
+    puts("");
 
+    hoy = leerFecha();
+    imprimirFecha(hoy);*/
+    puts("");
     return 0;
 }
