@@ -10,7 +10,7 @@
 void imprimir(int array[], int n){ // void imprimir(int *array){
     int i;
     for (i = 0 ; i < n ; i++){
-        printf("%d ", array[i]);
+        printf("%2d ", array[i]);
     }
     puts("");
 }
@@ -32,11 +32,35 @@ void cargarAlfabeto(char *alfabeto){
 }
 
 void codificar(const char *mensaje, const char *alfabeto, int *numeros, int n){
+    int i;
+    char *ptr;
+    int pos;
 
+    for (i = 0 ; i < n ; i++){
+        ptr = strchr(alfabeto, mensaje[i]);
+        if (ptr != NULL){
+            pos = ptr - alfabeto;
+            numeros[i] = pos;
+        }
+    }
+}
+
+void sumarK(int *numeros, int n, int k, int lenAlfabeto){
+    int i;
+
+    for (i = 0 ; i < n ; i++){
+        numeros[i] = (numeros[i] + k) % lenAlfabeto;
+    }
 }
 
 void decodificar(const int *numeros, const char *alfabeto, char *mensaje_enc, int n){
-    
+    int i;
+    char c;
+
+    for (i = 0 ; i < n ; i++){
+        c = alfabeto[numeros[i]];
+        mensaje_enc[i] = c;
+    }
 }
 
 int main(){
@@ -50,5 +74,13 @@ int main(){
     puts(alfabeto);
 
     codificar(mensaje, alfabeto, numeros, n);
+    puts(mensaje);
     imprimir(numeros, n);
+
+    // Sumar k a cada número:
+    sumarK(numeros, n, K, strlen(alfabeto));
+    imprimir(numeros, n);
+
+    decodificar(numeros, alfabeto, mensaje_enc, n);
+    puts(mensaje_enc);
 }
