@@ -6,25 +6,32 @@
 
 #define N 10
 
-//reservar();
-//imprimir();
-//liberar();
-
-int main(){
-    int *p = NULL;
-    int i;
-
+reservar(){
     // Reservar para N elementos enteros:
     p = (int *) malloc(N * sizeof(int));
+}
 
+imprimir(){
+    int i;
     for (i = 0 ;i < N ; i++){
         p[i] = i * 100;
 
         printf("%d ", p[i]);
     }
+}
 
+liberar(){
     free(p);
     p = NULL;
+}
+
+int main(){
+    int *p = NULL;
+   
+    reservar();
+    imprimir();
+    liberar();
+  
 
     puts("");
     return 0;
