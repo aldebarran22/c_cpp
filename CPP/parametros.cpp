@@ -4,6 +4,13 @@
 void cambiarVar(int &ref){
     ref *= 100;
 }
+
+
+void refCte(const int &ref){
+    // OJO la ref NO se puede modificar, es constante
+    //ref++; ERROR!
+}
+
 int main(){
     // Modificar a través de un puntero:
     int numero = 100;
