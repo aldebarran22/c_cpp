@@ -32,6 +32,36 @@ std::ostream & operator<<(std::ostream &os, const Hora &hora){
             << ":" << std::setw(2) << std::setfill('0') << hora.mm;
 }
 
+std::istream & operator>>(std::istream &is, Hora &hora){
+    return is >> hora.hh >> hora.mm;
+}
+
+Hora Hora::operator++(){
+    // Prefijo:
+
+    // Incrementar 1 min:
+    this->mm++;
+    this->ajustar(); 
+
+    // Retornar el mismo objeto
+    return *this;
+}
+
+Hora Hora::operator++(int){
+    // Postfijo:
+    
+    // Guardar el valor actual
+    Hora aux = *this; // Hora aux(*this);
+
+    // Incrementar 1 min:
+    this->mm++;
+    this->ajustar(); 
+
+    // Devolver el aux (temporal)
+    return aux;
+
+}
+
 int Hora::minutos() const{
     return this->hh * 60 + this->mm;
 }
@@ -55,11 +85,15 @@ void Hora::print() const {
             << ":" << std::setw(2) << std::setfill('0') << this->mm;
 }
 
+void Hora::ajustar(){
+    this->hh += this->mm / 60;
+    this->hh %= 24;
+    this->mm %= 60;
+}
+
 Hora Hora::operator+(const Hora &otro){
-    Hora suma(this->hh+otro.hh, this->mm+otro.mm);
-    suma.hh += suma.mm / 60;
-    suma.hh %= 24;
-    suma.mm %= 60;
+    Hora suma(this->hh+otro.hh, this->mm+otro.mm); 
+    this->ajustar();   
     return suma;
 }
         

@@ -60,6 +60,11 @@ int main(){
     std::cin >> h1;
     std::cout << "h1: " << h1 << std::endl;
     
-
+    
+    std::cout << "h1: " << h1 << std::endl;
+    Hora ahora = h1++;
+    std::cout << "ahora: " << ahora << " h1: " << h1 << std::endl;
+    ahora = ++h1;
+    std::cout << "ahora: " << ahora << " h1: " << h1 << std::endl;
 
 }
