@@ -32,10 +32,34 @@ int main(){
     ptr = nullptr;
 
     /////////////////
-    Hora h1;
-    Hora h2(8,33);
+    Hora h1(10,32);
+    Hora h2(18,33);
+    Hora suma;
 
-    h2.print();
+    h1.print();
     std::cout << std::endl;
-    std::cout << "Hora: " << h1.to_string() << std::endl;
+    h2.print();
+    suma = h1 + h2; // suma = h1.operator+(h2);
+    std::cout << std::endl;
+    std::cout << "Hora: " << suma << std::endl;
+
+
+    std::cout << "h1 < h2: " << (h1 < h2) << std::endl;
+
+    if (h1 > h2){
+        std::cout << h1 << " > " << h2 << std::endl;        
+    } else {
+        std::cout << h1 << " <= " << h2 << std::endl;        
+    }
+
+    std::cout << "h1: " << h1 << std::endl;
+    // suma = x + y;
+
+
+    std::cout << "Dame hora:";
+    std::cin >> h1;
+    std::cout << "h1: " << h1 << std::endl;
+    
+
+
 }
