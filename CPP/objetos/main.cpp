@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "persona.h"
+#include "hora.h"
 
 
 int main(){
@@ -29,4 +30,12 @@ int main(){
 
     delete ptr; 
     ptr = nullptr;
+
+    /////////////////
+    Hora h1;
+    Hora h2(8,33);
+
+    h2.print();
+    std::cout << std::endl;
+    std::cout << "Hora: " << h1.to_string() << std::endl;
 }
