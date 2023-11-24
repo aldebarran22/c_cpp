@@ -23,11 +23,14 @@ double Cuenta::retirar(double cantidad){
         if (this->saldo - cantidad >= 0){
             this->saldo -= cantidad;
             return this->saldo;    
+            
         } else {
             std::cerr << "La cantidad supera el saldo disponible: " << this->saldo << std::endl;
+            return -1;
         }
     } else {
         std::cerr << "Cantidad tiene que ser > 0" << std::endl;
+        return -1;
     }
 }
 
