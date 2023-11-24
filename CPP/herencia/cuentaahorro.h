@@ -12,6 +12,7 @@ class CuentaAhorro : public Cuenta {
 
     public:
     CuentaAhorro(std::string = "", std::string = "", double=0.0, double=0.0,double=250.0);
+    void imprimirSaldo();
     double retirar(double);
     ~CuentaAhorro();
 };

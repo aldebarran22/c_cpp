@@ -20,4 +20,9 @@ double CuentaAhorro::retirar(double cantidad){
     }
 }
 
+void CuentaAhorro::imprimirSaldo(){
+    std::cout << "Saldo de la C.Ahorro: " << this->getSaldo() << std::endl;
+    //std::cout << "Saldo:" << Cuenta::saldo;
+}
+
 CuentaAhorro::~CuentaAhorro(){}
