@@ -8,7 +8,9 @@
 
 class Persona {
 
-    friend std::ostream & operator<<(std::ostream &, const Persona &);
+    friend std::ostream & operator<<(std::ostream &os, const Persona &p);
+
+    
 
     // Atributos:
     //private:
