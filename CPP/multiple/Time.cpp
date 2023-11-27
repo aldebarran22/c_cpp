@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "Time.h"
+#include "TimeException.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -16,6 +17,9 @@ Time::Time(){
 }
 
 Time::Time(long segundos){
+	if (segundos < 0)
+		throw TimeException("Los sg. no pueden ser < 0");
+		
 	this->repartir(segundos / 3600.0);
 	this->ajustar();
 }
