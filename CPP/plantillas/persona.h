@@ -2,10 +2,13 @@
 #ifndef PERSONA_H
 
 #include <string>
+#include <iostream>
 
 #define PERSONA_H
 
 class Persona {
+
+    friend std::ostream & operator<<(std::ostream &, const Persona &);
 
     // Atributos:
     //private:
