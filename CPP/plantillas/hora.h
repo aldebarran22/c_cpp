@@ -11,6 +11,7 @@ class Hora {
     friend bool operator>(const Hora &, const Hora &);
     friend std::ostream & operator<<(std::ostream &, const Hora &);
     friend std::istream & operator>>(std::istream &, Hora &);
+    friend bool operator<(const Hora &, const Hora &);
 
     // Atributos:
     int hh, mm;
@@ -23,7 +24,7 @@ class Hora {
         std::string to_string() const;
         void print() const;
         Hora operator+(const Hora &);
-        bool operator<(const Hora &);
+        //bool operator<(const Hora &);
         Hora operator++();      // prefijo
         Hora operator++(int);   // postfijo
         ~Hora();

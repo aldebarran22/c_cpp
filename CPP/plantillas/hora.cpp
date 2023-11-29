@@ -66,8 +66,8 @@ int Hora::minutos() const{
     return this->hh * 60 + this->mm;
 }
 
-bool Hora::operator<(const Hora &otro){
-    return this->minutos() < otro.minutos();
+bool operator<(const Hora &h1, const Hora &h2){
+    return h1.minutos() < h2.minutos();
 }
         
 std::string Hora::to_string() const {
