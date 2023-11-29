@@ -106,7 +106,11 @@ void testClases(){
     Vector<int> aux;
     Vector<int> numeros2(numeros);
 
-    //aux = numeros2; // operator =
+    aux.add(100);
+    aux.add(200);
+    
+    // aux.operator=(numeros2)
+    aux = numeros2; // operator =
 
     std::cout << "numeros: ptr " << numeros.getPtr() << std::endl;
     std::cout << "numeros2: ptr " << numeros2.getPtr() << std::endl;
@@ -120,6 +124,10 @@ void testClases(){
 
     std::cout << "numeros: ";
     numeros.print();
+
+    std::cout << "aux: ";
+    aux.print();
+
 }
 
 int main(){

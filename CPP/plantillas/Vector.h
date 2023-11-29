@@ -41,6 +41,27 @@ template<class T> Vector<T>::Vector(const Vector<T> &o){
 
 template<class T> Vector<T> & Vector<T>::operator=(const Vector<T> &o){
 
+    //std::cout << "this->ptr " << this->getPtr() << std::endl;
+    //std::cout << "n: " << this->n << std::endl;
+    //this->print();
+
+    // 1. liberar memoria en this
+    delete []this->ptr;
+
+    // 2 Copiar contadores
+    this->n = o.n;
+    this->pos = o.pos;
+
+    // 3. Reservar memoria
+    this->ptr = new T[o.n];
+
+    // 4. copiar los elementos del array
+    for (int i = 0 ; i < o.pos ; i++){
+        this->ptr[i] = o.ptr[i];
+    }
+
+    // 5. Devolver una referencia a this:
+    return *this;
 }
 
 template<class T> bool Vector<T>::add(T item){
