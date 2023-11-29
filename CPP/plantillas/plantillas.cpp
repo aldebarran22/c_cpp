@@ -2,9 +2,11 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <cstdio>
 
 //#include "persona.h"
 #include "hora.h"
+#include "Vector.h"
 
 template <class T> T menor(T a, T b){
     std::cout << "plantilla menor" << std::endl;
@@ -36,8 +38,8 @@ template <class T> T* reservar(int n){
     return ptr;
 }
 
-int main(){
-    std::cout << "char: " << menor('Z', 'a') << std::endl;
+void testFunciones(){
+     std::cout << "char: " << menor('Z', 'a') << std::endl;
     //std::cout << "int: " << menor("88", 7.9) << std::endl; ERROR! distinto
     std::cout << "const char *: " << menor("hola", "HOLA") << std::endl;
     std::cout << "string: " << menor(std::string("hola"), std::string("HOLA")) << std::endl;
@@ -86,5 +88,42 @@ int main(){
     }
     std::cout << std::endl;
 
+}
+
+void testClases(){
+    Vector<int> numeros(15);
+    //Vector<std::string> nombres; // Será de tamaño 10
+
+    numeros.add(23);
+    numeros.add(43);
+    numeros.add(27);
+    numeros.add(11);
+
+    std::cout << "numeros: ";
+    numeros.print();
+
+    // Constructor copia:
+    Vector<int> aux;
+    Vector<int> numeros2(numeros);
+
+    //aux = numeros2; // operator =
+
+    std::cout << "numeros: ptr " << numeros.getPtr() << std::endl;
+    std::cout << "numeros2: ptr " << numeros2.getPtr() << std::endl;
+
+    numeros2.add(1000);
+
+    numeros.add(999);
+
+    std::cout << "numeros2: ";
+    numeros2.print();
+
+    std::cout << "numeros: ";
+    numeros.print();
+}
+
+int main(){
+   
+    testClases();
     return 0;
 }

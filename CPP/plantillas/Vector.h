@@ -13,9 +13,13 @@ template <class T> class Vector {
 
     public:
     Vector(int=10);
+    Vector(const Vector<T> &);
+    Vector<T> & operator=(const Vector<T> &);
+    //Vector(const Vector<T> &)=delete; Borra el constructor copia y no se puede utilizar
     bool add(T);
     void print();
     int getNumElem(){ return this->n; }
+    const T * getPtr(){ return this->ptr; }
     ~Vector();
 };
 
@@ -24,6 +28,19 @@ template<class T> Vector<T>::Vector(int n){
     ptr = new T[n];
     this->n = n;
     pos = 0;
+}
+
+template<class T> Vector<T>::Vector(const Vector<T> &o){
+    this->n = o.n;
+    this->pos = o.pos;
+    this->ptr = new T[o.n];
+    for (int i = 0 ; i < o.pos ; i++){
+        this->ptr[i] = o.ptr[i];
+    }
+}
+
+template<class T> Vector<T> & Vector<T>::operator=(const Vector<T> &o){
+
 }
 
 template<class T> bool Vector<T>::add(T item){
