@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
 class MatrizCSV {
 
@@ -14,6 +15,7 @@ class MatrizCSV {
     MatrizCSV(std::string);
     int getNumFilas(){ return matriz.size();}
     int getNumCols(){ return matriz.at(0).size(); }
+    void exportar(std::string, std::ostream &);
     void print();
     ~MatrizCSV();
 };

@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 #include "funciones.h"
 #include "matrizcsv.h"
@@ -18,7 +19,12 @@ void testSplit(){
 
 int main(){
     MatrizCSV m("../../ficheros/Pedidos.txt");
-    m.print();
+    //m.print();
     std::cout << m.getNumFilas() << " x " << m.getNumCols() << std::endl;
+
+    std::ofstream os("./Suiza.csv");
+    m.exportar("Suiza", std::cout); // Redirigir a consola
+    m.exportar("Suiza", os); // al fichero
+    os.close();
     return 0;
 }

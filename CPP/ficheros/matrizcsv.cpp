@@ -16,6 +16,8 @@ MatrizCSV::MatrizCSV(std::string path){
     }
 
     while (std::getline(fich, linea)){
+        // Limpiar el final de la linea:
+        linea = linea.substr(0, linea.length()-1);
         split(linea, columnas);
         matriz.push_back(columnas);
         columnas.clear();
@@ -23,6 +25,19 @@ MatrizCSV::MatrizCSV(std::string path){
     }
 
     fich.close();
+}
+
+void MatrizCSV::exportar(std::string pais, std::ostream &os){
+    int n = pais.length();
+
+    for (std::vector<std::string> fila :this->matriz){       
+        if (pais == fila.at(5)){
+            for (std::string col : fila){
+                os << col << "\t";
+            }
+            os << std::endl;
+        }
+    }
 }
   
 void MatrizCSV::print(){
