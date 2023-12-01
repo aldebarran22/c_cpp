@@ -26,9 +26,14 @@ MatrizCSV::MatrizCSV(std::string path){
 }
   
 void MatrizCSV::print(){
-    
+    for (std::vector<std::string> fila :this->matriz){
+        for (std::string col : fila){
+            std::cout << col << "\t";
+        }
+        std::cout << std::endl;
+    }    
 }
 
 MatrizCSV::~MatrizCSV(){
-
+    
 }

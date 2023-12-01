@@ -18,6 +18,7 @@ void testSplit(){
 
 int main(){
     MatrizCSV m("../../ficheros/Pedidos.txt");
+    m.print();
     std::cout << m.getNumFilas() << " x " << m.getNumCols() << std::endl;
     return 0;
 }
